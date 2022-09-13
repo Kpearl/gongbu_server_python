@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello")
+def login(request):
+    return HttpResponse("login")
+
+def join(request):
+    return HttpResponse("join")
