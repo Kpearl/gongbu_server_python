@@ -2,7 +2,6 @@ from django.db import models
 
 
 class User(models.Model):
-    id = models.AutoField()
     email = models.EmailField()
     password = models.TextField()
     nickname = models.TextField()

@@ -48,7 +48,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "gongbu_server_python.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "gongbu_server_python.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -74,7 +74,7 @@ WSGI_APPLICATION = "gongbu_server_python.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mytable',
+        'NAME': 'gongbu',
         'USER': 'root',
         'PASSWORD': '1234root',
         'HOST': 'localhost',
