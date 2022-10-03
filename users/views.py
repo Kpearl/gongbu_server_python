@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from rest_framework.decorators import action
 
-from users.models import Users
 from users.serializers import UsersSerializer
+
 @action(methods=['POST'], detail=False)
 def login(request):
     return HttpResponse("login")
@@ -10,7 +10,7 @@ def login(request):
 
 @action(methods=['POST'], detail=False)
 def join(request):
-    serializer = UsersSerializer(request.data)
+    serializer = UsersSerializer(request.body)
     serializer.is_valid()
     serializer.save()
     return HttpResponse("join")

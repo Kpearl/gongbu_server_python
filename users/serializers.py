@@ -3,11 +3,15 @@ from users.models import Users
 
 
 class UsersSerializer(serializers.Serializer):
-    email = serializers.IntegerField()
+    email = serializers.CharField()
     password = serializers.CharField()
     nickname = serializers.CharField(required=False)
-    phone = serializers.BooleanField(required=False)
-    birth = serializers.ChoiceField(required=False)
+    phone = serializers.CharField(required=False)
+    birth = serializers.CharField(required=False)
+
+    class Meta:
+        model = Users
+        fields = ('email', 'password', 'nickname', 'phone', 'birth')
 
     def create(self, validated_data):
         return Users.objects.create(**validated_data)
