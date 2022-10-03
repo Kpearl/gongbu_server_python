@@ -10,7 +10,7 @@ def login(request):
 
 @action(methods=['POST'], detail=False)
 def join(request):
-    serializer = UsersSerializer(request.body)
-    serializer.is_valid()
+    serializer = UsersSerializer(data=request.body)
+    serializer.is_valid(raise_exception=True)
     serializer.save()
     return HttpResponse("join")
