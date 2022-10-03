@@ -1,7 +1,9 @@
 from django.db import models
 
+class Users(models.Model):
+    class Meta:
+        db_table = 'users'
 
-class User(models.Model):
     email = models.EmailField()
     password = models.TextField()
     nickname = models.TextField()
